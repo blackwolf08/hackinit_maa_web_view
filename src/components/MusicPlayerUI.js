@@ -19,6 +19,7 @@ export default class MusicPlayerUI extends Component {
     return (
       <div>
         <MusicPlayer playlist={playlist} />
+        <p className="text">Sunny</p>
       </div>
     );
   }
