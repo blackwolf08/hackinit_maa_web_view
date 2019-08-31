@@ -6,6 +6,7 @@
     "antd": "^3.22.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-jinke-music-player": "^4.3.5",
     "react-responsive-music-player": "^0.4.3",
     "react-scripts": "3.1.1"
   },

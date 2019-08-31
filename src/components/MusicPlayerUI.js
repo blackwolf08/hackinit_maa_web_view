@@ -17,10 +17,7 @@ const playlist = [
 export default class MusicPlayerUI extends Component {
   render() {
     return (
-      <div>
         <MusicPlayer playlist={playlist} />
-        <p className="text">Sunny</p>
-      </div>
     );
   }
 }

@@ -2,18 +2,31 @@
 .App {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #eee;
+
 }
 
 .form-wrapper {
   width: 100%;
-  padding: 0 20vw 0 20vw;
-  background-color: #fce4ec;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.text {
-  color: #e91e63;
-  font-size: 2rem;
+.player-cover{
+  position: absolute;
+  border-radius: 0% !important;
+  width: 80% !important;
+  margin-left: 0 !important;
+  top: 0;
+  left: 0;
+  background-size: cover !important;
+  height: 300px !important;
+  transform: translate(12%, 0);
+}
+
+.player-control {
+  margin-top: 100px !important;
 }
