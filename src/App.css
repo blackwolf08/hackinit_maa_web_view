@@ -18,7 +18,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-image: url('https://images.pexels.com/photos/2179373/pexels-photo-2179373.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-image: url('./overlay.jpeg');
   background-size: cover;
   background-position: center center;
 
@@ -31,6 +31,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  flex-direction: column;
 }
 
 .player-cover{
@@ -47,7 +48,8 @@ body {
 }
 
 .player-control {
-  padding: 0 20px 0 20px;
+  padding: 20px 20px 20px 20px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .title {
@@ -70,4 +72,30 @@ body {
   background-color: #eee !important;
   color: black;
   box-shadow: 0 0 10px #000;
+}
+
+.meditate {
+  background-image: url('./undraw_mindfulness_scgo.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  filter: opacity(0.9);
+  margin-bottom: 30px;
+  border-radius: 100%;
+  box-shadow: 0 0 10px #eee;
+  animation: br 2s linear infinite forwards;
+}
+
+@keyframes br {
+  0%{
+    box-shadow: 0 0 10px #eee;
+  }
+  50%{
+    box-shadow: 0 0 20px #000;
+  }
+  100%{
+    box-shadow: 0 0 10px #eee;
+  }
 }
