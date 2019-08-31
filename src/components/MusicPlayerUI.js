@@ -60,9 +60,9 @@ export default class MusicPlayerUI extends Component {
     if(this.state.landing){
       return (
         <div className="overlay">
-          <Button className="button-overlay" onClick={()=>this.changeSong(0.7)} key="Happy" type="primary">Happy</Button>
-          <Button className="button-overlay" onClick={()=>this.changeSong(0.2)} type="primary" key="Sad">Sad</Button>
-          <Button className="button-overlay" onClick={()=>this.changeSong(0.5)} type="primary" key="Relaxed">Relaxed</Button>
+          <button className="button-overlay" onClick={()=>this.changeSong(0.7)} key="Happy" type="primary">Happy</button>
+          <button className="button-overlay" onClick={()=>this.changeSong(0.2)} type="primary" key="Sad">Sad</button>
+          <button className="button-overlay" onClick={()=>this.changeSong(0.5)} type="primary" key="Relaxed">Relaxed</button>
         </div>
       )
     }
