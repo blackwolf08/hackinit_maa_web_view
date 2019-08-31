@@ -1,23 +1,78 @@
 import React, { Component } from 'react';
 import MusicPlayer from 'react-responsive-music-player';
- 
-const playlist = [
-  {
-    url: 'https://failai.us//Alan_Walker_-_Alone_%28tophitai.lt%29.mp3',
-    cover: 'https://i.pinimg.com/originals/fd/49/ee/fd49ee7e110454f1daaf0836d1bd0539.jpg',
-    title: 'Despacito',
-    artist: [
-      'Luis Fonsi',
-      'Daddy Yankee'
-    ]
-  }
-]
+import axios from 'axios'
+import { Spin, Button } from 'antd';
 
+ 
 
 export default class MusicPlayerUI extends Component {
+
+  state = {
+    playlist: [],
+    loading: true,
+     landing : true,
+     status : "0.2"
+  }
+
+
+  componentDidMount(){
+    axios.post('https://cors-anywhere.herokuapp.com/https://us-central1-hypnos-backend-a41f5.cloudfunctions.net/sendPlaylist', {
+      value : this.state.status
+    }).then(res=>{
+      console.log(res.data.data)
+      this.setState({
+        playlist : res.data.data,
+      })
+      this.setState({
+        loading: false
+      })
+    })
+    
+    
+  }
+
+  changeSong = (val)=>{
+    this.setState({
+      loading: true
+    })
+    axios.post('https://cors-anywhere.herokuapp.com/https://us-central1-hypnos-backend-a41f5.cloudfunctions.net/sendPlaylist', {
+      value : val
+    }).then(res=>{
+      console.log(res.data.data)
+      this.setState({
+        playlist : res.data.data,
+      })
+      this.setState({
+        loading: false,
+        landing: false
+      })
+    })
+  }
+
+
   render() {
+
+
+    if(this.state.loading){
+      return <Spin />
+    }
+
+    if(this.state.landing){
+      return (
+        <div className="overlay">
+          <Button className="button-overlay" onClick={()=>this.changeSong(0.7)} key="Happy" type="primary">Happy</Button>
+          <Button className="button-overlay" onClick={()=>this.changeSong(0.2)} type="primary" key="Sad">Sad</Button>
+          <Button className="button-overlay" onClick={()=>this.changeSong(0.5)} type="primary" key="Relaxed">Relaxed</Button>
+        </div>
+      )
+    }
+
     return (
-        <MusicPlayer playlist={playlist} />
+        <MusicPlayer playlist={this.state.playlist} />
     );
   }
 }
+
+
+
+
