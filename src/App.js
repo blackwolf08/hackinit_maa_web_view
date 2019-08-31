@@ -7,7 +7,6 @@ function App() {
   return (
     <div className="App">
       <div className="form-wrapper">
-        <div className="meditate"></div>
         <MusicPlayerUI />
       </div>
     </div>

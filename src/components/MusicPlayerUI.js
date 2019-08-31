@@ -68,7 +68,10 @@ export default class MusicPlayerUI extends Component {
     }
 
     return (
+      <>
+      <div className="meditate"></div>
         <MusicPlayer playlist={this.state.playlist} />
+      </>
     );
   }
 }
